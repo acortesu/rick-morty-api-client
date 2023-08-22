@@ -5,7 +5,6 @@ function Character({ name, species, gender, origin, status, image }) {
   return (
     <div className="card">
       <img className="pic" src={image} alt={name} />
-      {/* Aquí puedes agregar la imagen si la tienes */}
       <div className="card-info-cnt">
         <p className="card-title">{name}</p>
         <div className="row">
