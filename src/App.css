@@ -1,6 +1,8 @@
-body {
-  background-color: #000000;
+html, body {
+  background-color: transparent;
   font-family: 'Inter';
+  height: 100%;
+  margin: 0;
 }
 
 .background {
@@ -8,27 +10,26 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh; /* Esto asegura que la imagen cubra toda la altura de la ventana */
-  width: 100%;   /* Esto asegura que la imagen cubra toda la anchura de la ventana */
-  display: flex; /* Habilita flexbox */
-  flex-direction: column; /* Orientación vertical */
-  align-items: center; /* Centra los elementos horizontalmente */
-  justify-content: flex-start; /* Alinea los elementos al inicio verticalmente */
+  height: 100vh; 
+  width: 100%;  
+  display: flex; 
+  flex-direction: column;
+  align-items: center; 
+  justify-content: flex-start; 
+  background-attachment: fixed;
+  overflow: auto;
 }
 
-.logo {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.logo img {
   width: 320px;
   height: 100px;
-  margin-top: 50px; /* Ahora puedes usar margin sin afectar al contenedor */
+  margin-top: 50px; 
 }
 
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos horizontalmente */
+  align-items: center; 
 }
 
 .pic{
@@ -117,7 +118,8 @@ body {
 
 .character-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
-  gap: 16px; /* Espacio entre las tarjetas */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  background-color: transparent;
 }
 

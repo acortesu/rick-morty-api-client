@@ -13,24 +13,26 @@ function Dropdowns() {
       let episodes = [];
       let nextPage = 1;
       let hasMorePages = true;
-  
+
       while (hasMorePages) {
-        const response = await fetch(`https://rickandmortyapi.com/api/episode?page=${nextPage}`);
+        const response = await fetch(
+          `https://rickandmortyapi.com/api/episode?page=${nextPage}`
+        );
         const data = await response.json();
         episodes = episodes.concat(data.results);
         hasMorePages = data.info.next ? true : false;
         nextPage++;
       }
-  
+
       // Filtrar episodios por la temporada seleccionada
-      const filteredEpisodes = episodes.filter(
-        (episode) => episode.episode.startsWith(`S0${season}`)
+      const filteredEpisodes = episodes.filter((episode) =>
+        episode.episode.startsWith(`S0${season}`)
       );
       setEpisodes(filteredEpisodes);
     };
-  
+
     fetchAllEpisodes();
-  }, [season]);  
+  }, [season]);
 
   useEffect(() => {
     if (episode) {
@@ -73,7 +75,8 @@ function Dropdowns() {
         </select>
       </div>
       <div className="character-grid">
-        {characters.map((character) => (
+      {characters.length > 0 &&
+        characters.map((character) => (
           <Character
             key={character.id}
             name={character.name}
@@ -84,8 +87,8 @@ function Dropdowns() {
             image={character.image} 
           />
         ))}
-      </div>
     </div>
+  </div>
   );
 }
 
